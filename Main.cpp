@@ -1,5 +1,6 @@
 #define _USE_MATH_DEFINES
 #include "FPoint3.h"
+#include "Sphere.h"
 #include <iostream>
 #include <math.h>
 int main(void){
@@ -39,6 +40,16 @@ int main(void){
 		std::cout << "Instance Counter: " << test2.getInstanceCount() << std::endl;
 		delete test6;
 	}
+	Sphere sp;
+	FPoint3 point1 = FPoint3(1/M_SQRT2,1/sqrt(3),1/sqrt(5));
+	std::cout << "Einheitskreis enthält point1 " << (sp.Contains(point1)?"ja":"nein") << std::endl;
+	FPoint3 point2 = FPoint3(0,0,0);
+	std::cout << "Einheitskreis enthält point2 " << (sp.Contains(point2)?"ja":"nein") << std::endl;
+	FPoint3 point3 = FPoint3(0,0,1);
+	std::cout << "Einheitskreis enthält point3 " << (sp.Contains(point3)?"ja":"nein") << std::endl;
+	FPoint3 point4 = FPoint3(1/sqrt(3),1/sqrt(3),1/sqrt(3));
+	std::cout << "Einheitskreis enthält point4 " << (sp.Contains(point4)?"ja":"nein") << std::endl;
+
 	std::cout << "Instance Counter: " << FPoint3::getInstanceCount() << std::endl;
 	std::cout << "Programm beendet" << std::endl;
 }

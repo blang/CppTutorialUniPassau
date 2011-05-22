@@ -24,5 +24,6 @@ class FPoint3 {
 		void Set(const std::string &);
 		std::string toString(std::string delimiter = ", ");
 		FPoint3 *base;
+		double getDistance(const FPoint3 &) const;
 };
 #endif /* FPOINT3_H_ */

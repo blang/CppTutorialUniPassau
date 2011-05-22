@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <cmath>
 
 int FPoint3::instcount = 0;
 FPoint3::FPoint3(void){
@@ -74,4 +75,13 @@ std::string FPoint3::toString(std::string delimiter){
 	ostr << x << delimiter << y << delimiter << z;
 	return ostr.str();
 }
+
+double FPoint3::getDistance(const FPoint3 &aPoint) const{
+	return sqrt(
+			pow(this->GetX() - aPoint.GetX(),2)
+			+ pow(this->GetY() - aPoint.GetY(),2)
+			+ pow(this->GetZ() - aPoint.GetZ(), 2)
+			);
+}
+
 

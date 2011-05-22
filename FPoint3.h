@@ -14,14 +14,15 @@ class FPoint3 {
 		FPoint3(const FPoint3 &);
 		virtual ~FPoint3(void);
 		static int getInstanceCount(void);
-		double GetX();
-		double GetY();
-		double GetZ();
+		double GetX() const;
+		double GetY() const;
+		double GetZ() const;
 		void SetX(double);
 		void SetY(double);
 		void SetZ(double);
 		void Set(double, double, double);
 		void Set(const std::string &);
 		std::string toString(std::string delimiter = ", ");
+		FPoint3 *base;
 };
 #endif /* FPOINT3_H_ */

@@ -8,7 +8,7 @@
 #include "Cuboid.h"
 #include "FPoint3.h"
 
-Cuboid::Cuboid(double x1, double x2, double y1, double y2, double z1, double z2) {
+Cuboid::Cuboid(double x1, double x2, double y1, double y2, double z1, double z2) : Solid("Unit Cuboid"){
 	this->left_bottom_front = FPoint3(x1,y1,z1);
 	this->right_top_back = FPoint3(x2,y2,z2);
 }

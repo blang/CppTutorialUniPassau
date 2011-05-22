@@ -8,8 +8,9 @@
 #ifndef CUBOID_H_
 #define CUBOID_H_
 #include "FPoint3.h"
+#include "Solid.h"
 
-class Cuboid {
+class Cuboid : public Solid{
 private:
 	FPoint3 left_bottom_front;
 	FPoint3 right_top_back;

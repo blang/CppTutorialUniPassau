@@ -1,6 +1,7 @@
 #define _USE_MATH_DEFINES
 #include "FPoint3.h"
 #include "Sphere.h"
+#include "Cuboid.h"
 #include <iostream>
 #include <math.h>
 int main(void){
@@ -51,6 +52,15 @@ int main(void){
 	std::cout << "Einheitskreis enthält point4 " << (sp.Contains(point4)?"ja":"nein") << std::endl;
 
 	std::cout << "Instance Counter: " << FPoint3::getInstanceCount() << std::endl;
+
+	Sphere s1 = Sphere();
+	std::cout << "Center of Sphere: " << s1.GetCenter().GetX() << "," <<  s1.GetCenter().GetY() << "," << s1.GetCenter().GetZ() << std::endl;
+	std::cout << "Diameter of Sphere: " << s1.GetDiameter() << std::endl;
+	std::cout << "Name of Sphere: " << s1.getLabel() << std::endl;
+	Cuboid c1 = Cuboid(0, 10, 0, 10, 0, 10);
+	std::cout << "Center of Cuboid: " << c1.GetCenter().GetX() << "," <<  c1.GetCenter().GetY() << "," << c1.GetCenter().GetZ() << std::endl;
+	std::cout << "Diameter of Cuboid: " << c1.GetDiameter() << std::endl;
+	std::cout << "Name of Cuboid: " << c1.getLabel() << std::endl;
 	std::cout << "Programm beendet" << std::endl;
 }
 

@@ -15,4 +15,11 @@ bool Sphere::Contains(const FPoint3 &point) const{
 	return (this->radius - this->center.getDistance(point)) >= 0;
 }
 
+double Sphere::GetDiameter(void) const{
+	return this->radius;
+}
+const FPoint3 &Sphere::GetCenter(void) const{
+	return this->center;
+}
+
 

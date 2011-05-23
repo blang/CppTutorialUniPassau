@@ -7,6 +7,7 @@
 #include <string>
 #ifndef SOLID_H_
 #define SOLID_H_
+#include "FPoint3.h"
 
 class Solid {
 private:
@@ -14,6 +15,8 @@ private:
 public:
 	Solid(std::string);
 	std::string getLabel();
+	virtual double GetDiameter(void) const = 0;
+	virtual const FPoint3 &GetCenter(void) const = 0;
 	virtual ~Solid();
 };
 

@@ -16,6 +16,7 @@ private:
 	FPoint3 right_top_back;
 	mutable FPoint3 center;
 public:
+	Cuboid();
 	Cuboid(double x1, double x2, double y1, double y2, double z1, double z2);
 	virtual bool Contains(const FPoint3 &) const;
 	virtual ~Cuboid();

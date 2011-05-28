@@ -7,6 +7,11 @@
 
 #include "Cuboid.h"
 #include "FPoint3.h"
+Cuboid::Cuboid() : Solid("Unit Cuboid"){
+	this->left_bottom_front = FPoint3();
+	this->right_top_back = FPoint3();
+	this->center = FPoint3();
+}
 Cuboid::Cuboid(double x1, double x2, double y1, double y2, double z1, double z2) : Solid("Unit Cuboid"){
 	this->left_bottom_front = FPoint3(x1,y1,z1);
 	this->right_top_back = FPoint3(x2,y2,z2);
@@ -39,7 +44,7 @@ const FPoint3 &Cuboid::GetCenter(void) const {
 }
 void Cuboid::Enclose(const Solid &solid){
 	const FPoint3 center = solid.GetCenter();
-	double radius = solid.GetDiameter();
+	double radius = solid.GetDiameter()/2;
 	this->center = center;
 	this->left_bottom_front.SetX(center.GetX() - radius);
 	this->left_bottom_front.SetY(center.GetY() - radius);

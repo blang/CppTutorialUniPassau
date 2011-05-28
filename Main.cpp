@@ -61,6 +61,33 @@ int main(void){
 	std::cout << "Center of Cuboid: " << c1.GetCenter().GetX() << "," <<  c1.GetCenter().GetY() << "," << c1.GetCenter().GetZ() << std::endl;
 	std::cout << "Diameter of Cuboid: " << c1.GetDiameter() << std::endl;
 	std::cout << "Name of Cuboid: " << c1.getLabel() << std::endl;
+
+	//Abfrage durch User
+	std::cout << "Eingeben:" << std::endl;
+	std::string eingabe;
+	std::cin >> eingabe;
+	std::cout << "Eingabe war: " << eingabe << std::endl;
+	Solid *solid = NULL;
+	Solid *solid_en = NULL;
+	if(eingabe.compare("sphere") == 0){
+		solid = new Sphere();
+		solid_en = new Cuboid();
+		solid_en->Enclose(*solid);
+		std::cout << "Sphere von Cuboid umschlossen" << std::endl;
+		FPoint3 center = solid_en->GetCenter();
+		std::cout << "Cuboid: " << solid_en->getLabel() << " hat Mittelpunkt: " << center.toString() <<  " und Durchmesser: " << solid_en->GetDiameter() << std::endl;
+		delete solid, solid_en;
+	}else if(eingabe.compare("cuboid") == 0){
+		solid = new Cuboid();
+		solid_en = new Sphere();
+		solid_en->Enclose(*solid);
+		std::cout << "Sphere von Cuboid umschlossen" << std::endl;
+		FPoint3 center = solid_en->GetCenter();
+		std::cout << "Sphere: " << solid_en->getLabel() << " hat Mittelpunkt: " << center.toString() << " und Durchmesser: " << solid_en->GetDiameter() << std::endl;
+		delete solid,solid_en;
+	}else{
+		std::cout << "Eingabe nicht erkannt: " << eingabe << std::endl;
+	}
 	std::cout << "Programm beendet" << std::endl;
 }
 

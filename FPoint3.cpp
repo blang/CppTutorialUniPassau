@@ -70,7 +70,7 @@ void FPoint3::Set(const std::string &string){
 	}
 }
 
-std::string FPoint3::toString(std::string delimiter){
+std::string FPoint3::toString(const std::string delimiter) const{
 	std::ostringstream ostr;
 	ostr << x << delimiter << y << delimiter << z;
 	return ostr.str();
@@ -83,5 +83,36 @@ double FPoint3::getDistance(const FPoint3 &aPoint) const{
 			+ pow(this->GetZ() - aPoint.GetZ(), 2)
 			);
 }
+
+//Possible Memory leak because of missing delete.
+FPoint3 FPoint3::operator+(const FPoint3 &aPoint) const{
+	return *(new FPoint3(this->GetX()+aPoint.GetX(),
+			this->GetY()+aPoint.GetY(),
+			this->GetZ()+aPoint.GetZ()));
+}
+
+//Possible Memory leak because of missing delete.
+FPoint3 FPoint3::operator-(const FPoint3 &aPoint) const{
+	return *(new FPoint3(this->GetX()-aPoint.GetX(),
+			this->GetY()-aPoint.GetY(),
+			this->GetZ()-aPoint.GetZ()));
+}
+
+double FPoint3::Norm() const {
+	return sqrt(pow(this->GetX(),2)+pow(this->GetY(),2)+pow(this->GetZ(),2));
+}
+
+std::ostream &operator<<(std::ostream& o, const FPoint3 &point){
+	o << point.toString();
+	return o;
+}
+
+FPoint3 operator*(double scalar, const FPoint3 &aPoint){
+	return *(new FPoint3(
+			aPoint.GetX()*scalar,
+			aPoint.GetY()*scalar,
+			aPoint.GetZ()*scalar));
+}
+
 
 

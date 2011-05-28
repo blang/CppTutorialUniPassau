@@ -61,6 +61,12 @@ int main(void){
 	std::cout << "Center of Cuboid: " << c1.GetCenter().GetX() << "," <<  c1.GetCenter().GetY() << "," << c1.GetCenter().GetZ() << std::endl;
 	std::cout << "Diameter of Cuboid: " << c1.GetDiameter() << std::endl;
 	std::cout << "Name of Cuboid: " << c1.getLabel() << std::endl;
+	//Operatoren testen
+	FPoint3 testPoint = FPoint3(1.0,2.2,3.4);
+	std::cout << "Test von Punkt testPoint: " << testPoint <<std::endl;
+	std::cout << "Test von Addition: " << testPoint+testPoint <<std::endl;
+	std::cout << "Test von Skalarmultiplikation: " << 5*testPoint << std::endl;
+	std::cout << "Test von Norm: " << testPoint.Norm() << std::endl;
 
 	//Abfrage durch User
 	std::cout << "Eingeben:" << std::endl;
@@ -76,7 +82,8 @@ int main(void){
 		std::cout << "Sphere von Cuboid umschlossen" << std::endl;
 		FPoint3 center = solid_en->GetCenter();
 		std::cout << "Cuboid: " << solid_en->getLabel() << " hat Mittelpunkt: " << center.toString() <<  " und Durchmesser: " << solid_en->GetDiameter() << std::endl;
-		delete solid, solid_en;
+		delete solid;
+		delete solid_en;
 	}else if(eingabe.compare("cuboid") == 0){
 		solid = new Cuboid();
 		solid_en = new Sphere();
@@ -84,7 +91,8 @@ int main(void){
 		std::cout << "Sphere von Cuboid umschlossen" << std::endl;
 		FPoint3 center = solid_en->GetCenter();
 		std::cout << "Sphere: " << solid_en->getLabel() << " hat Mittelpunkt: " << center.toString() << " und Durchmesser: " << solid_en->GetDiameter() << std::endl;
-		delete solid,solid_en;
+		delete solid;
+		delete solid_en;
 	}else{
 		std::cout << "Eingabe nicht erkannt: " << eingabe << std::endl;
 	}

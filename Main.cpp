@@ -70,7 +70,7 @@ int main(void){
 	std::cout << "Test von Skalarmultiplikation: " << 5*testPoint << std::endl;
 	std::cout << "Test von Norm: " << testPoint.Norm() << std::endl;
 
-	/*
+
 	//Abfrage durch User
 	std::cout << "Eingeben:" << std::endl;
 	std::string eingabe;
@@ -99,7 +99,7 @@ int main(void){
 	}else{
 		std::cout << "Eingabe nicht erkannt: " << eingabe << std::endl;
 	}
-	*/
+
 	// FPoint benutzen
 	TPoint<int,2> tpoint = TPoint<int,2>();
 	tpoint[0]=2;

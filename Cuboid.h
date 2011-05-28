@@ -14,13 +14,14 @@ class Cuboid : public Solid{
 private:
 	FPoint3 left_bottom_front;
 	FPoint3 right_top_back;
-	mutable FPoint3 *center;
+	mutable FPoint3 center;
 public:
 	Cuboid(double x1, double x2, double y1, double y2, double z1, double z2);
 	virtual bool Contains(const FPoint3 &) const;
 	virtual ~Cuboid();
 	virtual double GetDiameter(void) const;
 	virtual const FPoint3 &GetCenter(void) const;
+	virtual void Enclose(const Solid &);
 };
 
 #endif /* CUBOID_H_ */

@@ -22,4 +22,9 @@ const FPoint3 &Sphere::GetCenter(void) const{
 	return this->center;
 }
 
+void Sphere::Enclose(const Solid &solid){
+	this->center = solid.GetCenter();
+	this->radius = solid.GetDiameter();
+}
+
 

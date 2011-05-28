@@ -18,6 +18,7 @@ public:
 	virtual bool Contains(const FPoint3 &) const;
 	virtual double GetDiameter(void) const;
 	virtual const FPoint3 &GetCenter(void) const;
+	virtual void Enclose(const Solid &);
 
 };
 

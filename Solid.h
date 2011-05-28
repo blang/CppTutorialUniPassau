@@ -17,6 +17,7 @@ public:
 	std::string getLabel();
 	virtual double GetDiameter(void) const = 0;
 	virtual const FPoint3 &GetCenter(void) const = 0;
+	virtual void Enclose(const Solid &) = 0;
 	virtual ~Solid();
 };
 

@@ -5,6 +5,7 @@
 #include "TPoint.h"
 #include <iostream>
 #include <math.h>
+#include "FPoint3Set.h"
 int main(void){
 	{
 		std::cout.precision(15);
@@ -101,5 +102,8 @@ int main(void){
 	tpointdouble[2]=M_SQRT2;
 	std::cout << "Punkt = " << tpointdouble[0] << "," << tpointdouble[1] << "," << tpointdouble[2] << std::endl;
 	std::cout << "Programm beendet" << std::endl;
+	MyFPoint3Comp comp;
+	comp(point1,point2);
+
 }
 

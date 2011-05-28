@@ -2,8 +2,10 @@
 #include "FPoint3.h"
 #include "Sphere.h"
 #include "Cuboid.h"
+#include "TPoint.h"
 #include <iostream>
 #include <math.h>
+#include "FPoint3Set.h"
 int main(void){
 	{
 		std::cout.precision(15);
@@ -68,6 +70,7 @@ int main(void){
 	std::cout << "Test von Skalarmultiplikation: " << 5*testPoint << std::endl;
 	std::cout << "Test von Norm: " << testPoint.Norm() << std::endl;
 
+	/*
 	//Abfrage durch User
 	std::cout << "Eingeben:" << std::endl;
 	std::string eingabe;
@@ -96,6 +99,19 @@ int main(void){
 	}else{
 		std::cout << "Eingabe nicht erkannt: " << eingabe << std::endl;
 	}
+	*/
+	// FPoint benutzen
+	TPoint<int,2> tpoint = TPoint<int,2>();
+	tpoint[0]=2;
+	std::cout << "Punkt = " << tpoint[0] << "," << tpoint[1] << std::endl;
+	TPoint<double, 3> tpointdouble = TPoint<double, 3>();
+	tpointdouble[0]=M_E;
+	tpointdouble[1]=M_PI;
+	tpointdouble[2]=M_SQRT2;
+	std::cout << "Punkt = " << tpointdouble[0] << "," << tpointdouble[1] << "," << tpointdouble[2] << std::endl;
 	std::cout << "Programm beendet" << std::endl;
+	MyFPoint3Comp comp;
+	comp(point1,point2);
+
 }
 

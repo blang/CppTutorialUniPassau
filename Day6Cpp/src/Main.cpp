@@ -1,5 +1,8 @@
 #include <cstdio>
+#include <cstdlib>
+#include <cmath>
 #include <iostream>
+#include <map>
 #include "CustomIntVector.h"
 int main(void){
 	printf("test2");
@@ -48,5 +51,22 @@ int main(void){
 
 	test6.InsertSquareAfterEachValue();
 	std::cout << "Square insert" << test6 << std::endl;
+
+
+	int i = 0;
+	std::map<int, double> calculationBuffer;
+		std::map<int, int> histogram;
+	CustomIntVector randnbr_bit;
+	srand((int) time(NULL));
+	double sum = 0;
+	for(i = 0; i<10000; ++i){
+		int nr = rand()&((1<<10)-1); //Other possibility: rand()%((int)pow(2,10))
+		sum += sqrt(sqrt(nr));
+		randnbr_bit.push_back(nr);
+	}
+	std::cout << randnbr_bit << std::endl;
+	std::cout << "Summe: " << sum << std::endl;
+
+
 	return 0;
 }
